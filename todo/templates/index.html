@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_container p-4">
+
+        <a href="/create" class="btn btn-primary">Create Todo</a>
+        
+        <div class="todo_container border border-primary">
+            {% for todo in todo_data %}
+                <a href="/view/{{ todo.id }}" class="p-2">
+                    <h4 class="">{{ todo.title }}</h4>
+                    <div class="">{{ todo.description }}</div>
+                </a>
+            {% endfor %}
+        </div>
+        
+    </div>
+</body>
+</html>
