@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
+{% extends 'main_template.html' %}
 
-    <style>
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    </style>
-</head>
-<body>
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
     <div class="main_container p-4">
 
         <a href="/create" class="btn btn-primary">Create Todo</a>
@@ -30,5 +19,4 @@
         </div>
         
     </div>
-</body>
-</html>
+{% endblock %}
